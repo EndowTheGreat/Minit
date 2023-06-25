@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: "minit-api"
+    ports:
+      - "8080:8080"
+    networks:
+      - fullstack
+    volumes:
+      - database:/tmp/badger
+  
+  web:
+    build: ./web/
+    container_name: "minit-web"
+    ports:
+      - "8081:8081"
+    environment:
+      - HOST=http://localhost:8082
+    depends_on:
+      - api
+    networks:
+      - fullstack
+
+volumes:
+  database:
+
+networks:
+  fullstack:
+    driver: bridge
