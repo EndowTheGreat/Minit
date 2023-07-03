@@ -1,6 +1,6 @@
 # Minit
 
-**Minit** is a self-hostable URL shortening instance that's portable and simple.
+[**Minit**](https://minit.endowthegreat.xyz) is a self-hostable URL shortening instance that's portable and simple.
 
 ----
 
